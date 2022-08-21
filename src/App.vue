@@ -1,4 +1,6 @@
 <script setup>
+import { mdiGithub } from "@mdi/js";
+
 import Merge from "./Merge.vue";
 </script>
 
@@ -10,7 +12,11 @@ import Merge from "./Merge.vue";
     <main>
       <Merge />
     </main>
-    <footer />
+    <footer>
+      <a href="https://github.com/meirlamdan/merge-pdf"
+        ><Icon :path="mdiGithub" color="black" />
+      </a>
+    </footer>
   </div>
 </template>
 

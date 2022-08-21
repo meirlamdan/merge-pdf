@@ -69,8 +69,6 @@ const deleteFile = (file) => {
 .file-view {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  justify-content: flex-start;
 }
 
 .drag-active {

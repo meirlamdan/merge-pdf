@@ -90,12 +90,15 @@ const download = () => {
           pages 1, 2, 3, 4, 5, and 6.
         </li>
         <li>You can drag and drop the files in the order you want.</li>
-        <li>Click the Merge button to merge the PDF files.</li>
-        <li>Click the Download button to download the merged PDF file.</li>
+        <li>Click the Merge/Split button to merge/split the PDF file/s.</li>
+        <li>
+          Click the Download button to download the merged/split PDF file.
+        </li>
       </ol>
     </div>
     <button class="merge" v-if="files.length" @click="mergePdf">
-      Merge {{ files.length || "" }} selected files
+      <span v-if="files.length === 1">Split the selected file</span>
+      <span v-else>Merge {{ files.length || "" }} selected files</span>
     </button>
     <div class="message">
       <div v-if="loading" class="load">loading...</div>
@@ -130,6 +133,7 @@ const download = () => {
   cursor: pointer;
   margin: 10px 0;
 }
+
 .message {
   margin: 10px 0;
 }
@@ -138,6 +142,7 @@ const download = () => {
   color: #ff0000;
   font-size: 12;
 }
+
 .download {
   justify-content: center;
   background: #4f9b4c;

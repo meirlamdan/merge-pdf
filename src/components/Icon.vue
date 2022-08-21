@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, ref } from "@vue/runtime-core";
 const props = defineProps({
   path: {
     type: String,

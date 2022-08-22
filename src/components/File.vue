@@ -13,7 +13,7 @@ const props = defineProps(["file"]);
         class="pages"
         type="text"
         v-model="file.pages"
-        placeholder="chose pages"
+        placeholder="Select Pages"
         @focus="$emit('inputFocus')"
         @blur="$emit('inputBlur')"
       />

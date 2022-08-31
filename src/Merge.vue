@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { PDFDocument } from "pdf-lib";
 
 import Dropzone from "./components/Dropzone.vue";
+import Louder from "./components/Louder.vue";
 
 const files = ref([]);
 const errMsg = ref(null);
@@ -101,7 +102,7 @@ const download = () => {
       <span v-else>Merge {{ files.length || "" }} selected files</span>
     </button>
     <div class="message">
-      <div v-if="loading" class="load">loading...</div>
+      <Louder />
       <div v-if="errMsg" class="error">Error: {{ errMsg }}</div>
       <div v-if="pdfUrl">The file is ready !</div>
     </div>

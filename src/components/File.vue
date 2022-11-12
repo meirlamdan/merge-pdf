@@ -7,7 +7,9 @@ const props = defineProps(["file"]);
 <template>
   <div class="file">
     <span class="delete-file" @click.stop="$emit('deleteFile', file)">✖</span>
-    <div class="icon"><Icon :path="mdiFilePdfBox" /></div>
+    <div class="icon">
+      <Icon :path="mdiFilePdfBox" size="28" color="gray" />
+    </div>
     <div>
       <input
         class="pages"
@@ -31,11 +33,13 @@ const props = defineProps(["file"]);
   border-radius: 5px;
   position: relative;
   margin: 5px;
+  background: #f5f5f5;
 }
 .delete-file {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 1px;
+  right: 5px;
+  font-size: 14px;
 }
 .name {
   width: 100%;
@@ -53,7 +57,6 @@ const props = defineProps(["file"]);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: gray;
 }
 
 .pages {

@@ -29,11 +29,18 @@ import Merge from "./Merge.vue";
   font-weight: normal;
 }
 
-header,
-footer {
+header {
   line-height: 1.5;
   background: rgb(213, 211, 211);
   padding: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: rgb(213, 211, 211);
+  padding: 1rem;
+  width: 100%;
 }
 
 main {

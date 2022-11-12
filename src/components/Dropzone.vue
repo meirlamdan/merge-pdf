@@ -80,12 +80,12 @@ const deleteFile = (file) => {
 }
 
 .ghost {
-  background: gray;
+  background: #a3a3a3 !important;
   opacity: 0.5;
 }
 
 .drag {
-  background: rgb(183, 196, 241);
+  background: #eff6ff !important;
   opacity: 0.5;
 }
 </style>

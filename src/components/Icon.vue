@@ -8,11 +8,15 @@ const props = defineProps({
     type: String,
     default: "currentColor",
   },
+  size: {
+    type: String,
+    default: 24,
+  },
 });
 </script>
 
 <template>
-  <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+  <svg :style="{width: `${size}px`, height: `${size}px`}" viewBox="0 0 24 24">
     <path :fill="color" :d="path" />
   </svg>
 </template>

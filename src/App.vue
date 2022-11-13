@@ -47,6 +47,6 @@ main {
   max-width: 1000px;
   min-height: 500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0 70px 0;
 }
 </style>

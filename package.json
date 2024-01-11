@@ -1,20 +1,22 @@
 {
   "name": "merge-pdf",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
-    "@mdi/js": "^7.0.96",
+    "@mdi/js": "^7.4.47",
     "pdf-lib": "^1.17.1",
-    "vue": "^3.2.37",
-    "vue3-dropzone": "^0.0.7",
+    "pdfjs-dist": "^4.0.379",
+    "vue": "^3.4.6",
+    "vue3-dropzone": "^2.2.1",
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.1",
-    "vite": "^3.0.1"
+    "@vitejs/plugin-vue": "^5.0.2",
+    "vite": "^5.0.11"
   }
 }

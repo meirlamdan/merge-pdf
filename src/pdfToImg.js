@@ -1,5 +1,5 @@
 import * as pdfjsLib from 'pdfjs-dist';
-import * as pdfjsWorker from "pdfjs-dist/build/pdf.worker";
+import * as pdfjsWorker from "pdfjs-dist/build/pdf.worker.mjs";
 
 export default async function pdfToImg(pdfFile) {
   const reader = new FileReader();

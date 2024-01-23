@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed, watchEffect } from "vue";
 
 import pdfImg from '../pdfToImg.js'
 
@@ -9,13 +9,28 @@ const src = ref(null);
 onMounted(async () => {
   src.value = await pdfImg(props.file);
 });
+
+const rotate = ref(0)
+const setRotate = () => {
+  if (props.file.rotate === 360) {
+    props.file.rotate = 0;
+    rotate.value = 0
+    return
+  }
+  props.file.rotate ||= 0;
+  props.file.rotate += 90;
+
+  rotate.value = props.file.rotate
+  console.log(props.file.rotate)
+}
 </script>
 
 <template>
   <div class="file">
     <div class="file-view">
-      <img :src alt="" v-if="src">
-      <span class="delete-file" @click.stop="$emit('deleteFile', file)">✖</span>
+      <img :src alt="" v-if="src" :style="{ transform: `rotate(${rotate}deg)` }">
+      <span class="delete-file" @click.stop="$emit('deleteFile', file)">✕</span>
+      <span class="rotate-file" @click.stop="setRotate">↻</span>
       <div class="select-pages">
         <input type="text" v-model="file.pages" placeholder="Select Pages" @focus="$emit('inputFocus')"
           @blur="$emit('inputBlur')" />
@@ -39,20 +54,38 @@ onMounted(async () => {
   height: 180px;
   padding: 7px 7px 0 7px;
   position: relative;
+  overflow: hidden;
 }
 
 img {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  object-fit: cover;
+  display: 'block'
 }
 
 .delete-file {
   position: absolute;
-  top: 5px;
-  right: 8px;
+  top: 8px;
+  right: 10px;
   cursor: pointer;
+  font-size: 14px;
+
+}
+
+.delete-file:hover {
+  font-weight: 600;
+}
+
+.rotate-file {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.rotate-file:hover {
+  font-weight: 600;
 }
 
 .select-pages {

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { PDFDocument } from "pdf-lib";
+import { PDFDocument, degrees } from "pdf-lib";
 
 import Dropzone from "./components/Dropzone.vue";
 import Louder from "./components/Louder.vue";
@@ -51,6 +51,9 @@ const mergePdf = async () => {
         getSelectedPages(file, pdfLoad)
       );
       copyPages.forEach((page) => {
+        if (file.rotate || file.rotate === 0) {
+          page.setRotation(degrees(file.rotate))
+        }
         mergedPdf.addPage(page);
       });
     }

@@ -27,7 +27,6 @@ import Merge from "./Merge.vue";
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-weight: normal;
-
   box-sizing: border-box;
 }
 

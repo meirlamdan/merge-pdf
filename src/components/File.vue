@@ -116,6 +116,6 @@ input {
 }
 
 input:focus {
-  outline: none;
+  outline: #d1d5db solid 1px;
 }
 </style>

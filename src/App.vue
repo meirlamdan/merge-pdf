@@ -7,15 +7,16 @@ import Merge from "./Merge.vue";
 <template>
   <div>
     <header>
+      <a href="https://github.com/meirlamdan/merge-pdf">
+        <Icon :path="mdiGithub" color="black" />
+      </a>
+
       <h2>Merge and split pdf files</h2>
     </header>
     <main>
       <Merge />
     </main>
     <footer>
-      <a href="https://github.com/meirlamdan/merge-pdf">
-        <Icon :path="mdiGithub" color="black" />
-      </a>
     </footer>
   </div>
 </template>
@@ -28,20 +29,20 @@ import Merge from "./Merge.vue";
     sans-serif;
   font-weight: normal;
   box-sizing: border-box;
+  background: #f1f5f9;
+  color: #374151;
 }
 
 header {
-  line-height: 1.5;
-  background: rgb(213, 211, 211);
-  padding: 1rem;
+  position: relative;
+  background: #e2e8f0;
+  padding: 0.8rem;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  background: rgb(213, 211, 211);
-  padding: 1rem;
-  width: 100%;
+header a {
+  position: absolute;
+  right: 50px;
+  top: 35px;
 }
 
 main {

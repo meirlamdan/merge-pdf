@@ -61,7 +61,7 @@ const deleteFile = (file) => {
 
 <style>
 .files {
-  background: #fafafa;
+  background: #f8fafc;
   border: 1px dashed #000;
   border-radius: 5px;
 }

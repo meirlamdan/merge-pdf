@@ -31,6 +31,7 @@ import Merge from "./Merge.vue";
   box-sizing: border-box;
   background: #f1f5f9;
   color: #374151;
+  min-height: 100vh;
 }
 
 header {
